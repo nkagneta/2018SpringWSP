@@ -1,2 +1,6 @@
 # 2018SpringWSP
 Web Server Programming
+
+I've always been facinated by the inner workings of computers ever since my Dad took apart our old Nintendo Enterntainment System (NES) because it had stopped working. As he attempted to fix it, my four-year-old brain was astonished by the fact that all of these shiny peices of metal could come together to allow me to play Mario and The Legend of Zelda.
+
+My Dad has been involved in I.T. my whole life; I was always interested in what he did for a living and how was able to manage computers to achieve goals. I became more interested in highschool when my physics professor began to teach us the basics of HTML. After coming to college I've tried to learn as much as I could about Computer Science in and out of the clasroom. I have taken a course throught the Google Developement Group of the Hudson Valley on Android Programming where they taught us the basics of how to create Apps with Android Studio. Similarly I recently became a recipient of the Grow with Google scholarship program in which Google and Udacity teamed up to provide free courses on the basics of web programming. Using the knowledge I have learned from the scholarship progam, I plan on utilizing this course in helping me transition from academia into the real world as I explore job opportunites after college.
