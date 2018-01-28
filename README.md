@@ -1,5 +1,5 @@
 # 2018SpringWSP
-Web Server Programming
+Web Server Programming - What Do You Meme?
 
 I've always been facinated by the inner workings of computers ever since my Dad took apart our old Nintendo Enterntainment System (NES) because it had stopped working. As he attempted to fix it, my four-year-old brain was astonished by the fact that all of these shiny peices of metal could come together to allow me to play Mario and The Legend of Zelda.
 
