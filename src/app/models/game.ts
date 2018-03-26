@@ -11,7 +11,7 @@ export class Game {
     ];
     Picture: string = 'https://cdn.vox-cdn.com/thumbor/w3toxxZ9sLiDWslw9gJh3vyy56I=/0x0:3674x2800/1200x800/filters:focal(1761x932:2347x1518)/cdn.vox-cdn.com/uploads/chorus_image/image/58571535/usa_today_10588737.1517801738.jpg';
     PlayedQuotes: Quote[] = [
-        { Text: "Great minds think alike, but...", PlayerName: 'Nicholas', Chosen: false}
+        
     ];
 
 }
