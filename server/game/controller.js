@@ -12,7 +12,7 @@ module.exports = app
     .post('/picture', (req, res) => res.send( game.FlipPicture() ) )
     .post('/quotes', (req, res) => {
         console.log(req.body);
-
+        
         game.SubmitQuote(req.body.Text, req.body.PlayerId);
         res.send( {success: true} );
     })

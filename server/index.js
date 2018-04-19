@@ -14,8 +14,8 @@ app
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: false }))
     .use('/', (req, res, next) => {
-        res.header("Access-Control-Allow-Origin", "*")
-        res.header("Access-Control-Allow-Headers", "*")
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "*");
         next();
     } )
     .use('/', express.static(path.join(__dirname, "../dist/")))

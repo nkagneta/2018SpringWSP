@@ -126,11 +126,14 @@ function Game() {
 
     this.GetQuotes = (playerId) =>{   
         if(this.Players.some(x=> x.PlayerId == playerId)){
-
+            
         }else{
             this.Players.push({PlayerId: playerId, Name: playerId});
-            QuotesStack.slice(iCurrentQuote, iCurrentQuote += 7);
+            if(this.DealerId = null){
+                this.DealerId = this.Players.Name[0];
+            }
         }
+        return QuotesStack.slice(iCurrentQuote, iCurrentQuote += 7);
     }
     
     this.FlipPicture = () => this.Picture = PicturesStack[iCurrentPicture = (iCurrentPicture+1) % PicturesStack.length ];
@@ -138,9 +141,8 @@ function Game() {
     this.SubmitQuote = (text, playerId) => this.PlayedQuotes.push({ Text: text, PlayerId: playerId });
     this.ChooseQuote = text => {
         this.PlayedQuotes.find(x=> x.Text == text).Chosen = true;
-        this.DealerId = this.Players[this.DealerId = (this.DealerId + 1) % this.Players.length ] 
+        this.DealerId = this.Players[this.DealerId = (this.DealerId + 1) % this.Players.length ]
     } 
-
 }
 
 module.exports = Game;
