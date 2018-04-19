@@ -130,7 +130,7 @@ function Game() {
         }else{
             this.Players.push({PlayerId: playerId, Name: playerId});
             if(this.DealerId = null){
-                this.DealerId = this.Players.Name[0];
+                this.DealerId = this.Players[0].Name;
             }
         }
         return QuotesStack.slice(iCurrentQuote, iCurrentQuote += 7);
