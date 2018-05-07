@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
 import { Game, User, Quote } from '../models/game';
+import { MessagesService } from '../services/messages.service';
+import { GameService } from '../services/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -11,9 +14,14 @@ export class GameComponent implements OnInit {
 
     Model = new Game();
     Me: User;
-    private _api = "http://localhost:8080/game";
+    private _api = "/game"; //"http://localhost:8080/game";
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private _Messages: MessagesService, private _Game: GameService, private _Router: Router) {
+      this.Me = _Game.Me;
+      if(!this.Me){
+          _Router.navigate(['/login']);
+      }
+      this.join(this.Me.Name);
     setInterval(()=> this.refresh(), 1000)
   }
 
@@ -26,6 +34,7 @@ export class GameComponent implements OnInit {
   }
 
   flipPicture(e: MouseEvent){
+      this._Messages.Messages.push({ Text: 'Picture Flipped', Type: 'success'})
     this.http.post(this._api + "/picture",{})
         .subscribe();
   }
@@ -34,7 +43,7 @@ export class GameComponent implements OnInit {
     e.preventDefault();
 
     if(this.MyPlayedQuote() || this.IAmTheDealer()) return;
-
+    this._Messages.Messages.push({ Text: 'Quote submitted', Type: 'success'})
     this.http.post(this._api + "/quotes", { Text: text, PlayerId: this.Me.Name })
         .subscribe(data=> {
             if(data.json().success){
@@ -54,9 +63,10 @@ export class GameComponent implements OnInit {
         });
   }
 
-  login(name: string){
+  join(name: string){
+    this._Messages.Messages.push({ Text: 'You\'ve joined this game. Welcome ' + name + '!', Type: 'success'})
     this.http.get(this._api + "/quotes", { params : { playerId: name } })
-    .subscribe(data=> this.Me =  {Name: name, MyQuotes: data.json() } )
+    .subscribe(data=> this.Me.MyQuotes = data.json() )
   }
 
   MyPlayedQuote = () => this.Model.PlayedQuotes.find( x => x.PlayerId == this.Me.Name );
