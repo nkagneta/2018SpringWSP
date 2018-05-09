@@ -11,23 +11,23 @@ export class GameService {
   token: string;
   pic: string;
 
-  constructor(private http: Http, private _Messages: MessagesService, private _Router: Router) { 
-
+  constructor(private http: Http, private _Messages: MessagesService, private _Router: Router) {
+      
   }
 
-login(name: string, password: string){
-  if(password =='123'){
-    //log in user
-    this.Me = { Name: name, MyQuotes: [] }
-    this._Router.navigate(['/game'])
+  login(name: string, password: string){
+      if(password == '123'){
+          // User logs in
+          this.Me = { Name: name, MyQuotes: [] };
+          this._Router.navigate(['/game']);
+      }
   }
-}
 
-oAuthLogin(name: string, token:string, pic: string){
-  this.Me = { Name: name, MyQuotes: [] };
-  this.pic = pic;
-  this.token = token;
-  this._Router.navigate(['/game']);
+  oAuthLogin(name: string, token:string, pic: string){
+    this.Me = { Name: name, MyQuotes: [] };
+    this.pic = pic;
+    this.token = token;
+    this._Router.navigate(['/game']);
 }
 
 }
