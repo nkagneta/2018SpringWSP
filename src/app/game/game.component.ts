@@ -15,7 +15,7 @@ export class GameComponent implements OnInit {
     Model = new Game();
     Me: User;
 
-    private _api = "http://localhost:8080/game"; //works for dev server, change to "/game" for cloud hosting?
+    private _api = "/game";   //"http://localhost:8080/game"; //works for dev server, changed to "/game" for cloud hosting
 
   constructor(
       private http: Http,
